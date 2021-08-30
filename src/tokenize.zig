@@ -81,7 +81,7 @@ pub const Tokenizer = struct {
 
     pub fn next(self: *Tokenizer) Token {
         const start_index = self.index;
-        var prev_line_start: usize = 0; // Hack for calculating line break col_num (might fix later)
+        var prev_line_start: usize = 0; // TODO: Fix this hack for calculating line break col_num
         var state: State = .start;
         var result = Token{
             .id = .eof,
@@ -368,7 +368,7 @@ pub const Tokenizer = struct {
         };
         result.col_num = switch (result.id) {
             .line_break => self.prev_line_break_index - prev_line_start,
-            .multi_line_comment => result.start - self.prev_line_break_index,
+            .multi_line_comment => result.start - self.prev_line_break_index, // TODO: Fix col_num if first line is multi-line comment
             else => result.start - self.prev_line_break_index,
         };
         return result;
