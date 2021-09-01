@@ -1,3 +1,4 @@
+// Source: https://github.com/Qiskit/openqasm
 // quantum teleportation example
 OPENQASM 3;
 include "stdgates.inc";

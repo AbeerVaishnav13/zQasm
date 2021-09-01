@@ -1,3 +1,4 @@
+// Source: https://github.com/Qiskit/openqasm
 /*
  * Variational eigensolver example
  *
