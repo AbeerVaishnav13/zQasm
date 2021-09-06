@@ -47,6 +47,8 @@ def pauli_measurement(bit[2*n] spec, qubit[n] q) -> bit {
 // Circuit to prepare trial wave function
 def trial_circuit(qubit[n] q) {
   for l in [0: layers - 1] {
+
+    #pragma unroll
     for i in [0: n - 1] {
       angle[prec] theta;
       theta = get_parameter(l * layers + i);

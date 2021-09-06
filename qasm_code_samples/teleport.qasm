@@ -7,6 +7,8 @@ qubit[3] q;
 bit c0;
 bit c1;
 bit c2;
+duration t = 100ms;
+bool b = true;
 
 // optional post-rotation for state tomography
 // empty gate body => identity gate

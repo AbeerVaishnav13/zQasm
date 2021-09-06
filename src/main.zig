@@ -10,7 +10,7 @@ pub fn main() anyerror!void {
     var tokenizer = Tokenizer.init(input_file);
     while (true) {
         const token = tokenizer.next();
-        std.debug.print("{s} \t\t\t| {}\n", .{ input_file[token.start..token.end], token });
+        std.debug.print("{s}\t\t\t| {}\n", .{ token.data, token });
         if (token.id == .eof) break;
     }
 }
